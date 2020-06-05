@@ -15,7 +15,7 @@
                 //x:'x',
                 columns: [
                   //['x', 30, 50, 100, 230, 300, 310, 500, 600,100],
-                  ['data1', 30, 200, 1000, 400, 150, 250],
+                  ['data1', 30, 200, 50, 400, 150, 250],
                   ['data2', -30, -200, -100, -400, -150, -250],
           ],
           type: 'spline'
@@ -37,19 +37,25 @@
       try {
           var messageList = JSON.parse(message);
 
+          //var str = messageList.toString();
+
+          //var newnew = str.slice(0, 1);
           var newnew = messageList.slice(0, 1);
+
+          //var n = str.search("x");
+
           var citrus = messageList.slice(1, messageList.length);
 
-          if (newnew = 'x') {
-              chart.load({
-                  columns: [
-                    ['data2'].concat(citrus),
-                  ]
-              });
-          } else {
+          if (newnew == 'x') {
               chart.load({
                   columns: [
                     ['data1'].concat(citrus),
+                  ]
+              });
+          } else if (newnew == 'y') {
+              chart.load({
+                  columns: [
+                    ['data2'].concat(citrus),
                   ]
               });
 
